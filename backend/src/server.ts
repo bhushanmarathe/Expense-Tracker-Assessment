@@ -8,9 +8,14 @@ dotenv.config();
 
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: "*",
+//   }),
+// );
 app.use(
   cors({
-    origin: "*",
+    origin: "https://expense-tracker-assessment-five.vercel.app",
   }),
 );
 app.use(express.json());

@@ -74,8 +74,8 @@ A full-stack expense tracking application built with React, TypeScript, Node.js,
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd expense-tracker
+git clone https://github.com/bhushanmarathe/Expense-Tracker-Assessment.git
+cd Expense-Tracker-Assessment
 ```
 
 ---
@@ -94,27 +94,22 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env` file:
+Create a `.env` file (`DB_PORT` is required because Railway uses a custom port):
 
 ```env
 PORT=5000
 
-DB_HOST=localhost
+DB_HOST=reseau.proxy.rlwy.net
+DB_PORT=53644
 DB_USER=root
 DB_PASSWORD=your_password
-DB_NAME=expense_tracker
+DB_NAME=railway
 ```
 
 Start server:
 
 ```bash
 npm run dev
-```
-
-Backend runs on:
-
-```txt
-http://localhost:5000
 ```
 
 ---
@@ -149,19 +144,21 @@ http://localhost:5173
 
 ## Database Setup
 
-Create database:
+### Local MySQL Setup
+
+Create a database:
 
 ```sql
 CREATE DATABASE expense_tracker;
 ```
 
-Use database:
+Use the database:
 
 ```sql
 USE expense_tracker;
 ```
 
-Create table:
+Create the expenses table:
 
 ```sql
 CREATE TABLE expenses (
@@ -179,6 +176,20 @@ Create indexes:
 ```sql
 CREATE INDEX idx_category ON expenses(category);
 CREATE INDEX idx_expense_date ON expenses(expense_date);
+```
+
+### Railway Deployment
+
+For the deployed application, Railway MySQL is used as the database service. Railway automatically provisions the database, and the same `expenses` table schema is created in the Railway database.
+
+Connection details are provided through environment variables:
+
+```env
+DB_HOST=<railway-host>
+DB_PORT=<railway-port>
+DB_USER=<railway-user>
+DB_PASSWORD=<railway-password>
+DB_NAME=<railway-database>
 ```
 
 ---
@@ -236,3 +247,7 @@ Given more time, I would add:
 - No authentication required
 - Expenses can be deleted but not edited
 - Summary is calculated across all recorded expenses
+
+```
+
+```

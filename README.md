@@ -2,6 +2,14 @@
 
 A full-stack expense tracking application built with React, TypeScript, Node.js, Express, and MySQL.
 
+## Live Demo
+
+**Frontend:** https://expense-tracker-assessment-ihvz.vercel.app/
+
+**Backend API:** https://expense-tracker-assessment-3.onrender.com
+
+---
+
 ## Features
 
 - Add expenses with amount, category, date, and optional note
